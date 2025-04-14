@@ -2,11 +2,10 @@
 """Annotate the below function-s parameters and return values with the
 appropriate types
 """
-from typing import List, Tuple, Union
+from typing import Iterable, Tuple, Sequence, List
 
-
-def element_length(lst: List[Union[str,
-                                   List]]) -> List[Tuple[Union[str,
-                                                               List],
-                                                         int]]:
+def element_length(lst: Iterable[Sequence]) -> List[Tuple[Sequence, int]]:
+    """Annotate the below function’s parameters and return values with the
+    appropriate types
+    """
     return [(i, len(i)) for i in lst]
