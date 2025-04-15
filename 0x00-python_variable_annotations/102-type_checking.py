@@ -1,20 +1,19 @@
 #!/usr/bin/env python3
-"""Use mypy to validate the following piece of code and apply any
-necessary changes.
-"""
-from typing import Sequence, Tuple
+"""12. Type Checking"""
+from typing import Tuple, List
 
 
-def zoom_array(lst: Sequence, factor: int = 2) -> Tuple:
-    """Zooms in on the elements of a sequence by repeating them.
-
-    Args:
-        lst (Sequence): The sequence of elements to zoom in on.
-        factor (int, optional): The factor by which to zoom in (default is 2).
-
-    Returns:
-        Tuple: A tuple containing each element of `lst` repeated `factor`
-        times.
+def zoom_array(lst: Tuple, factor: int = 2) -> List:
+    """Use mypy to validate the following piece of code and apply any necessary
+    changes.
     """
-    zoomed_in = tuple(item for item in lst for _ in range(factor))
+    zoomed_in: Tuple = [
+        item for item in lst
+        for i in range(factor)
+    ]
     return zoomed_in
+
+
+array = [12, 72, 91]
+
+zoom_2x = zoom_array(array)
