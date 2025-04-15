@@ -1,20 +1,9 @@
 #!/usr/bin/env python3
-"""Augment the following code with the correct duck-typed annotations:
-"""
-from typing import Any, Iterable, Union
+from typing import Sequence, Any, Union, Optional
+from types import NoneType
 
 
-def safe_first_element(lst: Iterable[Any]) -> Union[Any, None]:
-    """Return the first element of an iterable `lst` or `None` if empty.
-
-    Args:
-        lst (Iterable[Any]): The iterable (list, tuple, etc.) to retrieve
-        the first element from.
-
-    Returns:
-        Union[Any, None]: The first element of `lst` or `None` if `lst` is
-        empty.
-    """
+def safe_first_element(lst: Sequence[Any]) -> Union[Any, NoneType]:
     if lst:
         return lst[0]
     else:
