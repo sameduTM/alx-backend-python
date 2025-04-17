@@ -10,6 +10,11 @@ async def wait_n(n: int, max_delay: int) -> list[float]:
     """return the list of all the delays (float values)"""
     delays_list = []
     for _ in range(n):
-        delays = await asyncio.gather(wait_random(max_delay))
-        delays_list += delays
+        delays_list += await asyncio.gather(wait_random(max_delay))
+    for _ in range(len(delays_list)):
+        for i in range(len(delays_list) - 1):
+            if delays_list[i] > delays_list[i + 1]:
+                temp = delays_list[i + 1]
+                delays_list[i + 1] = delays_list[i]
+                delays_list[i] = temp
     return delays_list
