@@ -7,8 +7,8 @@ from utils import (
 
 url = "https://www.swapi.tech/api/people/1"
 
-nested_map = {"a": {"b": 2}}
-path = ("a", "b")
+nested_map = {}
+path = ("a",)
 
 print(access_nested_map(nested_map, path))
 
