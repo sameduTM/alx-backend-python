@@ -7,8 +7,9 @@ from utils import (
 
 url = "https://www.swapi.tech/api/people/1"
 
-nested_map = {}
-path = ("a",)
+test_url="http://example.com"
+test_payload={"payload": True}
 
-print(access_nested_map(nested_map, path))
+
+print(get_json(url))
 
