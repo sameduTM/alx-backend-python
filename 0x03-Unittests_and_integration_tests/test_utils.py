@@ -42,7 +42,8 @@ class TestGetJson(unittest.TestCase):
         mock_response = Mock()
         mock_response.json.return_value = test_payload
 
-        with patch("utils.requests.get", return_value=mock_response) as mock_get:
+        with patch("utils.requests.get", return_value=mock_response) as \
+                mock_get:
             result = get_json(test_url)
 
             mock_get.assert_called_once_with(test_url)
@@ -50,13 +51,18 @@ class TestGetJson(unittest.TestCase):
 
 
 class TestMemoize(unittest.TestCase):
+    """TestMemoize class"""
+
     def test_memoize(self):
+        """test_memoize method"""
         class TestClass:
             def a_method(self):
+                """a_method"""
                 return 42
 
             @memoize
             def a_property(self):
+                """a_property"""
                 return self.a_method()
 
         with patch.object(TestClass, 'a_method', return_value=42) as mock_method:
